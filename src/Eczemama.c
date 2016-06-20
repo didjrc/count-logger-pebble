@@ -150,6 +150,17 @@ static void prv_add_data(EczemamaLogger *eczemamaLogger) {
   if (res != DATA_LOGGING_SUCCESS) {
     APP_LOG(APP_LOG_LEVEL_ERROR, "failed to add data to the logging session: %d", (int) res);
   }
+
+  //test
+  //Insert if-statement for DATA_LOGGING_FULL
+  //End DATALOG -- before or after push?
+  //Println 
+  //Push DATALOG to phone
+  else if (res == DATA_LOGGING_FULL) {
+    APP_LOG(APP_LOG_LEVEL_DEBUG, "DATA_LOGGING_FULL");
+    eczemamaLogger_stop_logging(eczemamaLogger);
+  }
+  //endTest
 }
 
 static void prv_delay_timer_callback(void *data) {
